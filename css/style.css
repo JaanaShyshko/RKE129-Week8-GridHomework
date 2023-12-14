@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --my-padding: 0.4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 2fr 1fr 1fr 0.5fr;
+    grid-template-areas: 
+    "nav nav"
+    "hero hero"
+    "main img"
+    "main extra"
+    "banner banner";
+
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+nav {
+    background-color: aquamarine;
+    grid-area: nav;
+}
+
+.nav-container {
+    align-items: center;
+    display: grid;
+    height: 100%;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1fr;
+
+    .menu {
+        background-color: rgb(236, 77, 77);
+        height: 100%;
+        align-items: center;
+        display: grid;
+    }
+    
+    .header {
+        background-color: aquamarine;
+        height: 100%;
+        align-items: center;
+        display: grid;
+    }
+}
+
+
+.hero {
+    align-items: center;
+    display: grid;
+    height: 100%;
+    background-color: rgb(127, 255, 136);
+    padding: var(--my-padding);
+    grid-area: hero;
+}
+
+.main {
+    align-items: center;
+    display: grid;
+    height: 100%;
+    background-color: rgb(255, 127, 127);
+    padding: var(--my-padding);
+    grid-area: main;
+}
+
+.img {
+    align-items: center;
+    display: grid;
+    height: 100%;
+    background-color: rgb(255, 240, 127);
+    padding: var(--my-padding);
+    grid-area: img;
+}
+
+.extra {
+    align-items: center;
+    display: grid;
+    height: 100%;
+    background-color: rgb(244, 127, 255);
+    padding: var(--my-padding);
+    grid-area: extra;
+}
+
+.banner {
+    align-items: center;
+    display: grid;
+    height: 100%;
+    background-color: rgb(132, 165, 165);
+    padding: var(--my-padding);
+    grid-area: banner;
+}
+
+@media (max-width: 1024px) {
+    .nav-container {
+        display: none;
+    }
+    
+    .container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 0.5fr 1.3fr 2fr 0.7fr 0.7fr;
+        grid-template-areas: 
+        "header header header"
+        "hero hero hero"
+        "menu main main"
+        "menu banner banner"
+        "menu extra img";
+    }
+
+    .header1 {
+        align-items: center;
+        display: grid;
+        height: 100%;
+        background-color: aquamarine;
+        padding: var(--my-padding);
+        grid-area: header;
+    }
+
+    .menu1 {
+        align-items: center;
+        display: grid;
+        height: 100%;
+        background-color: rgb(236, 77, 77);
+        padding: var(--my-padding);
+        grid-area: menu;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        display: none;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 0.5fr 1.3fr 2fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "header"
+        "menu"
+        "hero"
+        "main"
+        "banner"
+        "extra"
+        "img";
+    }
+}
